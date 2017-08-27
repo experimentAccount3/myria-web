@@ -19,7 +19,7 @@ install:
 
 
 script: 
-  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx,sqlalchemy} --gae-lib-root=google_appengine --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_ce5145a0f1_2
-  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_ce5145a0f1_2 ./appengine/profile_myria-web_ce5145a0f1_2
+  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx,sqlalchemy} --gae-lib-root=google_appengine --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_ce5145a0f1_3
+  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_ce5145a0f1_3 ./appengine/profile_myria-web_ce5145a0f1_3
 
- #2017-08-27 20:42:28 modified at 0 #2017-08-27 20:42:34 modified at 1 #2017-08-27 20:42:39 modified at 2
+ #2017-08-27 20:42:28 modified at 0 #2017-08-27 20:42:34 modified at 1 #2017-08-27 20:42:39 modified at 2 #2017-08-27 20:42:46 modified at 3
