@@ -1,6 +1,25 @@
 language: python
 python:
   - "2.7"
+
+before_install:
+# add for profile
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+- sudo apt-get update -qq
+
+
+
 install:
   - pip install -r requirements-dev.txt
-script: nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx} --without-sandbox
+# add for profile
+  - sudo apt-get install -qq g++-4.8
+  - export CXX="g++-4.8"
+  - pip install nose-cprof
+  - pip install properform
+
+
+script: 
+  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx} --without-sandbox --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_e6fe53bb26_0
+  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_e6fe53bb26_0 ./appengine/profile_myria-web_e6fe53bb26_0
+
+ #2017-08-27 21:20:52 modified at 0
