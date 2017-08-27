@@ -19,7 +19,7 @@ install:
 
 
 script: 
-  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx} --without-sandbox --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_61bb64a5a4_2
-  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_61bb64a5a4_2 ./appengine/profile_myria-web_61bb64a5a4_2
+  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx} --without-sandbox --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_61bb64a5a4_3
+  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_61bb64a5a4_3 ./appengine/profile_myria-web_61bb64a5a4_3
 
- #2017-08-27 22:02:36 modified at 0 #2017-08-27 22:02:44 modified at 1 #2017-08-27 22:02:57 modified at 2
+ #2017-08-27 22:02:36 modified at 0 #2017-08-27 22:02:44 modified at 1 #2017-08-27 22:02:57 modified at 2 #2017-08-27 22:03:04 modified at 3
