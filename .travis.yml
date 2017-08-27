@@ -1,8 +1,27 @@
 language: python
 python:
   - "2.7"
+
+before_install:
+# add for profile
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+- sudo apt-get update -qq
+
+
+
 install:
   - curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.18.zip && unzip -q google_appengine_1.9.18.zip
   - pip install -r requirements-dev.txt
-script: nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx,sqlalchemy} --gae-lib-root=google_appengine
-sudo: false
+# add for profile
+  - sudo apt-get install -qq g++-4.8
+  - export CXX="g++-4.8"
+  - pip install nose-cprof
+  - pip install properform
+
+
+
+script: 
+  - nosetests -w appengine --with-gae --exclude-dir={myria,raco,ply,networkx,sqlalchemy} --gae-lib-root=google_appengine --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_de5a856dab_0
+  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_de5a856dab_0 ./appengine/profile_myria-web_de5a856dab_0
+ 
+ #2017-08-27 20:47:22 modified at 0
