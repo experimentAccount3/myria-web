@@ -20,8 +20,8 @@ install:
 
 
 script: 
-  - nosetests test/test_myria_down.py test/test_myria_up.py test_style.py -w appengine --with-gae --gae-lib-root=google_appengine --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_a6a345d801_2
-  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_a6a345d801_2 ./appengine/profile_myria-web_a6a345d801_2
+  - nosetests test/test_myria_down.py test/test_myria_up.py test_style.py -w appengine --with-gae --gae-lib-root=google_appengine --with-cprofile --cprofile-stats-erase --cprofile-stats-file=profile_myria-web_a6a345d801_3
+  - python -m properform Push 47.88.50.110:15554 asdf_myria-web_a6a345d801_3 ./appengine/profile_myria-web_a6a345d801_3
 
 
- #2017-08-27 20:40:46 modified at 0 #2017-08-27 20:40:54 modified at 1 #2017-08-27 20:40:59 modified at 2
+ #2017-08-27 20:40:46 modified at 0 #2017-08-27 20:40:54 modified at 1 #2017-08-27 20:40:59 modified at 2 #2017-08-27 20:41:06 modified at 3
